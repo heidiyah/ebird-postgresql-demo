@@ -1,1 +1,1 @@
-\COPY ebird FROM '\\HOMESTORAGE\Heidi\Data Analysis\ebird_data\ebd_relJun-2025\ebd_relJun-2025\one_thou_rows.txt' WITH (FORMAT text, DELIMITER E'\t', HEADER true);
+\COPY ebird FROM '\\HOMESTORAGE\Heidi\Data Analysis\ebird_data\ebd_relJun-2025\ebd_relJun-2025\one_thou_rows.txt' WITH (FORMAT text, DELIMITER E'\t', HEADER true); --sample file
