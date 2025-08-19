@@ -1,0 +1,16 @@
+#directory for ebd files: /mnt/HDDs/postgres/ebd_relJun-2025
+
+#to split the 700gb file:
+
+ head -n 1 ebd_relJun-2025.txt > header.tsv
+ tail -n +2 ebd_relJun-2025.txt | split -l 600000 -d -a 4 --additional-suffix=.tsv - split_chunks/chunk_
+
+#enter docker container to run commands for postgres
+docker exec -it ix-postgres-postgres-1 /bin/bash
+#find source directory:
+docker inspect ix-postgres-postgres-1 | grep -A 5 Mounts
+
+
+#determine how many chunks produced errors
+find /var/lib/postgresql/data/heidi/ebd_relJun-2025/copy_logs -name "*.err" -type f -size +0c | wc -l
+
