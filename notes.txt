@@ -1,0 +1,7 @@
+For observation_count (set to text) will need to cast to numeric when querying numerically.
+Ex:
+SELECT value::NUMERIC
+FROM example
+WHERE value != 'X';
+
+
