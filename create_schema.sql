@@ -55,6 +55,7 @@ CREATE TABLE ebird (
 )
 
 --creating orthogonal tables
+--NOTE: For faster INSERT remove keys and assign after
 
 CREATE TABLE taxon (
     TAXONOMIC_ORDER int,
@@ -93,7 +94,7 @@ CREATE TABLE submission (
     PROTOCOL_CODE text,
     PROJECT_NAMES text,
     PROJECT_IDENTIFIERS text,
-    DURATION_MINUTES smallint,
+    DURATION_MINUTES int,
     EFFORT_DISTANCE_KM numeric(8,3),
     EFFORT_AREA_HA numeric(8,3),
     NUMBER_OBSERVERS smallint,
