@@ -1,7 +1,7 @@
 #!/bin/bash
 
 INPUT_FILE="ebd_relJun-2025.txt"
-OUTPUT_DIR="taxon_normalization"
+OUTPUT_DIR="location_normalization"
 mkdir -p "$OUTPUT_DIR"
 
 # Columns to keep (tab-separated)

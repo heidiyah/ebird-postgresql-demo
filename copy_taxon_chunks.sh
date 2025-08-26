@@ -6,8 +6,6 @@ DB="ebird"
 USER="postgres"
 TABLE="taxon_temp"
 
-mkdir -p "/var/lib/postgresql/data/heidi/ebd_relJun-2025/taxon_normalization/copy_logs"
-
 for f in "$CHUNK_DIR"/*; do
   base=$(basename "$f")
   psql -U "$USER" -d "$DB" -c "COPY $TABLE FROM '$f' WITH (FORMAT csv, DELIMITER E'\t', NULL '', ENCODING 'UTF8', QUOTE '\"', ESCAPE '\"');" \
