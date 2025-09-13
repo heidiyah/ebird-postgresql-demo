@@ -124,6 +124,44 @@ CREATE TABLE location (
     LONGITUDE numeric(10,7)
 );
 
+CREATE TABLE sed (
+    LAST_EDITED_DATE timestamp,
+    COUNTRY text,
+    COUNTRY CODE text,
+    STATE text,
+    STATE_CODE text,
+    COUNTY text,
+    COUNTY_CODE text,
+    IBA_CODE text,
+    BCR_CODE text,
+    USFWS_CODE text,
+    ATLAS_BLOCK text,
+    LOCALITY text,
+    LOCALITY_ID text UNIQUE NOT NULL PRIMARY KEY,
+    LOCALITY_TYPE text,
+    LATITUDE numeric(10,7),
+    LONGITUDE numeric(10,7),
+    LOCALITY_ID text, --REFERENCES location(LOCALITY_ID),
+    OBSERVATION_DATE date,
+    TIME_OBSERVATIONS_STARTED time,
+    OBSERVER_ID text,
+    OBSERVER_ORCID_ID text,
+    SAMPLING_EVENT_IDENTIFIER text, --UNIQUE NOT NULL PRIMARY KEY,
+    OBSERVATION_TYPE text,
+    PROTOCOL_NAME text,
+    PROTOCOL_CODE text,
+    PROJECT_NAMES text,
+    PROJECT_IDENTIFIERS text,
+    DURATION_MINUTES int,
+    EFFORT_DISTANCE_KM numeric(8,3),
+    EFFORT_AREA_HA numeric(8,3),
+    NUMBER_OBSERVERS smallint,
+    ALL_SPECIES_REPORTED boolean,
+    GROUP_IDENTIFIER text,
+    CHECKLIST_COMMENTS text
+
+);
+
 --Populate tables from master table, positions must match
 INSERT INTO table_name (
     column_1,
