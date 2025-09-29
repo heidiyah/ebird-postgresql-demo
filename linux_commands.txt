@@ -15,4 +15,4 @@ docker inspect ix-postgres-postgres-1 | grep -A 5 Mounts
 find /var/lib/postgresql/data/heidi/ebd_relJun-2025/copy_logs -name "*.err" -type f -size +0c | wc -l
 
 #pg_dump
-pg_dump -h localhost -p 5432 -U postgres -d ebird -F c -f ebird_backup.sql --create
+pg_dump -h localhost -p 5432 -U postgres -d ebird -F c -f ebird_backup_$(date +%Y%m%d_%H%M%S).sql --create
