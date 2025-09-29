@@ -127,7 +127,7 @@ CREATE TABLE location (
 CREATE TABLE sed (
     LAST_EDITED_DATE timestamp,
     COUNTRY text,
-    COUNTRY CODE text,
+    COUNTRY_CODE text,
     STATE text,
     STATE_CODE text,
     COUNTY text,
@@ -137,11 +137,10 @@ CREATE TABLE sed (
     USFWS_CODE text,
     ATLAS_BLOCK text,
     LOCALITY text,
-    LOCALITY_ID text UNIQUE NOT NULL PRIMARY KEY,
+    LOCALITY_ID text, --UNIQUE NOT NULL PRIMARY KEY --REFERENCES location(LOCALITY_ID),,
     LOCALITY_TYPE text,
     LATITUDE numeric(10,7),
     LONGITUDE numeric(10,7),
-    LOCALITY_ID text, --REFERENCES location(LOCALITY_ID),
     OBSERVATION_DATE date,
     TIME_OBSERVATIONS_STARTED time,
     OBSERVER_ID text,
@@ -159,7 +158,6 @@ CREATE TABLE sed (
     ALL_SPECIES_REPORTED boolean,
     GROUP_IDENTIFIER text,
     CHECKLIST_COMMENTS text
-
 );
 
 --Populate tables from master table, positions must match
