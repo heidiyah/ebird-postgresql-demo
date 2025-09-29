@@ -20,5 +20,3 @@ ALTER TABLE sub ADD CONSTRAINT sub_loc FOREIGN KEY (locality_id) REFERENCES loca
 ALTER TABLE obs ADD CONSTRAINT obs_taxon FOREIGN KEY (common_name) REFERENCES taxon (common_name);
 
 ALTER TABLE obs ADD CONSTRAINT obs_sub FOREIGN KEY (sampling_event_identifier) REFERENCES sub (sampling_event_identifier);
-
-ALTER TABLE sed ADD CONSTRAINT sed_sub FOREIGN KEY (sampling_event_identifier) REFERENCES sub (sampling_event_identifier);

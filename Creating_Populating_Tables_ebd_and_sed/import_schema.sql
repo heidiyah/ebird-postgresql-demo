@@ -1,5 +1,5 @@
 --taxon table
-INSERT INTO taxon (
+INSERT INTO tax (
     TAXONOMIC_ORDER,
     CATEGORY,
     TAXON_CONCEPT_ID,
@@ -9,10 +9,10 @@ INSERT INTO taxon (
     SUBSPECIES_SCIENTIFIC_NAME
 )
 SELECT DISTINCT ON (COMMON_NAME) *
-FROM taxon_temp;
+FROM tax_temp;
 
 --location table
-INSERT INTO location (
+INSERT INTO loc (
     COUNTRY,
     COUNTRY_CODE,
     STATE,
@@ -30,10 +30,10 @@ INSERT INTO location (
     LONGITUDE
 )
 SELECT DISTINCT ON (LOCALITY_ID) *
-FROM location_temp;
+FROM loc_temp;
 
 --submission table
-INSERT INTO submission (
+INSERT INTO sub (
     LOCALITY_ID,
     OBSERVATION_DATE,
     TIME_OBSERVATIONS_STARTED,
@@ -57,10 +57,10 @@ INSERT INTO submission (
     REASON
 )
 SELECT DISTINCT ON (SAMPLING_EVENT_IDENTIFIER) *
-FROM submission_temp;
+FROM sub_temp;
 
 --observation table
-INSERT INTO observation (
+INSERT INTO obs (
     GLOBAL_UNIQUE_IDENTIFIER,
     LAST_EDITED_DATE,
     COMMON_NAME,
@@ -75,4 +75,4 @@ INSERT INTO observation (
     SPECIES_COMMENTS
 )
 SELECT DISTINCT ON (GLOBAL_UNIQUE_IDENTIFIER) *
-FROM observation_temp;
+FROM obs_temp;
