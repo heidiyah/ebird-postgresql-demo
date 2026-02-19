@@ -1,0 +1,19 @@
+--Purpose: Import data from staging table to final table w/ constraints and a SELECT DISTINCT on primary key for normalization
+--Table: Observation
+
+INSERT INTO obs (
+    GLOBAL_UNIQUE_IDENTIFIER,
+    LAST_EDITED_DATE,
+    COMMON_NAME,
+	EXOTIC_CODE,
+    OBSERVATION_COUNT,
+    BREEDING_CODE,
+    BREEDING_CATEGORY,
+    BEHAVIOR_CODE,
+    AGE_SEX,
+	SAMPLING_EVENT_IDENTIFIER,
+    CHECKLIST_COMMENTS,
+    SPECIES_COMMENTS
+)
+SELECT DISTINCT ON (GLOBAL_UNIQUE_IDENTIFIER) *
+FROM obs_temp;
