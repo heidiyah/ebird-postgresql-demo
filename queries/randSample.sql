@@ -1,3 +1,5 @@
+-- Pulls random rows based on desired percentage, shows top 10 species from selection
+
 WITH sample_obs AS (
     SELECT *
     FROM obs TABLESAMPLE SYSTEM (0.001)  -- adjust fraction to get ~1000 rows

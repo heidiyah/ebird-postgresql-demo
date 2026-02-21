@@ -1,3 +1,5 @@
+-- Calculates the percentage of complete and incomplete checklists
+
 SELECT 
     all_species_reported,
     COUNT(*) AS count,

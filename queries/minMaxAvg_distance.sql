@@ -1,3 +1,5 @@
+-- Calculates basic stats on the distance traveled across all submissions
+
 SELECT 
     MIN(effort_distance_km) AS min_distance,
     MAX(effort_distance_km) AS max_distance,
